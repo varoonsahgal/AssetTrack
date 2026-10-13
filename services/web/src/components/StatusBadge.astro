@@ -1,0 +1,14 @@
+---
+// StatusBadge.astro — colored Bootstrap badge per asset status.
+const { status } = Astro.props as { status: string };
+
+const variantByStatus: Record<string, string> = {
+  available: "bg-success",
+  assigned:  "bg-primary",
+  retired:   "bg-secondary",
+  lost:      "bg-danger",
+};
+
+const variant = variantByStatus[status] ?? "bg-secondary";
+---
+<span class={`badge rounded-pill ${variant}`}>{status}</span>
