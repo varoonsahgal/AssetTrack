@@ -6,7 +6,7 @@ test.describe('AssetTrack - QR code feature', () => {
   test('asset detail page shows an accessible QR code', async ({ page }) => {
     // Land on the assets list and open the first asset's detail page.
     await page.goto('/assets');
-    const firstAsset = page.locator('tbody a[href^="/assets/"]').first();
+    const firstAsset = page.locator('a[href^="/assets/"]').first();
     await firstAsset.click();
 
     // The QR card heading and the accessible QR image are present.
